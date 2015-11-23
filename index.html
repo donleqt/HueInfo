@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html >
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta http-equiv="Cache-control" content="no-cache">
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />-->
+    <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /> -->
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/angular-ui-switch/angular-ui-switch.min.css"/>
+    <link rel="stylesheet" href="bower_components/angular-rangeslider/angular.rangeSlider.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="bower_components/timePicker/ez-timepicker.min.css">
+    <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog.css">
+    <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-theme-default.css">
+    <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-theme-plain.css">
+
+    <link rel="stylesheet" href="bower_components/angular-carousel/dist/angular-carousel.css">
+    <link rel="stylesheet" href="css/myslider.css">
+
+    <link rel="stylesheet" type="text/css" href="css/radio/build.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+
+    <script src="bower_components/angular/jquery-1.10.2.min.js"></script>
+	<script src="bower_components/angular/jquery-1.10.2.min.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!--<script type="application/javascript" src="cordova.js"></script>-->
+    <!--<script type="application/javascript" src="js/index.js"></script>-->
+    <script type="application/javascript">
+        function myFunction(){
+            window.localStorage.clear();
+            var storage = window.localStorage;
+            storage.setItem("statusPhone","false");
+        };
+    </script>
+
+</head>
+<body ng-class="first_class " ng-app="myApp" id="deviceready" ng-controller="FlowManagerController" onunload="myFunction()" >
+<span style="display: none" class="event listening">event listening</span>
+<span style="display: none" class="event received">event received</span>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content popup-info">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" ng-click="unBlur()" >&times;</button>
+          <h4 class="modal-title" style="color:white">FESTIVALS</h4>
+        </div>
+        <div class="modal-body">
+          <p style="color:white" >Festival Huế 2016 có chủ đề “710 năm Thuận Hóa - Phú Xuân - Thừa Thiên Huế; di sản văn hóa với hội nhập và phát triển” sẽ diễn ra từ ngày 29.4 đến ngày 4.5.2016.
+Festival.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button"  ng-click="unBlur()" class="btn btn-success" style="background:transparent" data-dismiss="modal" >Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div id="wholeScreen" >
+<div class=" my-background" style="position: fixed;width: 100%;height: 100%;">
+	<div class="wrapper">
+		<div style="" class="my-header">
+			<i class="fa fa-bars fa-2x pull-left my-header-nav"></i>
+			<span style="    font-size: 16pt;" class="fa-2x pull-left">HUE Info</span>
+			<i class="fa fa-ellipsis-v fa-2x pull-right my-header-nav"></i>
+			<i class="fa fa-search fa-2x pull-right " ></i>
+
+			<div class="clearfix"></div>
+			<!--<div class="col-lg-12" style="padding-top:20px; padding-bottom:5px; font-size: 12pt">-->
+				<!--<div class="col-xs-4 center">FESTIVALS</div>-->
+				<!--<div class="col-xs-4 center">FESTIVALS</div>-->
+				<!--<div class="col-xs-4 center">FESTIVALS</div>-->
+
+			<!--</div>-->
+		</div>
+	</div>
+	
+    <ul rn-carousel="" rn-carousel-controls="" rn-carousel-index="carouselIndex" rn-carousel-buffered="" class="carousel1 ng-scope" style="text-align: center; padding-top:40px">
+        <li ng-repeat="slide in slides|carouselSlice:carouselBufferIndex:carouselBufferSize track by slide.id" style=" display: inline-block; transform: translate3d(-200%, 0px, 0px);">
+            <!--<h1>{{slide.label}}</h1>-->
+            <img  ng-src="img/slider/{{slide.img}}" class="img-responsive img-circle "  style="margin: 0 auto;    border: 10px solid #D2D2D2; max-width: 200px">
+            <p class="slider-description">{{slide.description}}</p>
+            <button ng-click="bluredpopup()" class="btn btn-success slider-btn" data-toggle="modal" data-target="#myModal" >{{slide.name}}</button>
+			
+        </li>
+    </ul>
+</div>
+</div>
+
+<!--JAVASCRIPT FILE-->
+<!------------------------------------------------------------------>
+<script type="application/javascript" src="js/fastclick.js"></script>
+<script type="application/javascript" src="bower_components/angular/angular.js"></script>
+<script type="application/javascript" src="bower_components/angular/angular-cookies.js"></script>
+<script type="application/javascript" src="bower_components/angular/angular-route.js"></script>
+<script type="application/javascript" src="bower_components/angular/angular-resource.js"></script>
+<script type="application/javascript" src="bower_components/angular/angular-touch.min.js"></script>
+<script type="application/javascript" src="bower_components/ng-infinite-scroll.min.js"></script>
+<script type="application/javascript" src="bower_components/ngDialog/js/ngDialog.min.js"></script>
+
+<script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
+
+<!--Zoom-->
+<script type="application/javascript" src="bower_components/angular-pan-zoom/release/panzoom-custom.js"></script>
+<script type="application/javascript" src="bower_components/angular-mousewheel/mousewheel.js"></script>
+<script type="application/javascript" src="bower_components/hamsterjs/hamster.js"></script>
+
+<script src="bower_components/ng-error/ng-error.js"></script>
+
+
+<script type="application/javascript" src="js/app.js"></script>
+<script type="application/javascript" src="js/bootstrap.min.js"></script>
+<script type="application/javascript" src="js/controllers/FlowManagerController.js"></script>
+
+<script type="application/javascript" src="js/map/lodash.min.js" ></script>
+<script type="application/javascript" src="js/map/angular-google-maps.min.js"></script>
+<script type="application/javascript" src="bower_components/moment-with-locales.js"></script>
+
+
+</body>
+</html>
