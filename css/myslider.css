@@ -112,6 +112,8 @@ background: #764199 !important;
     -o-filter: blur(2px);
     -ms-filter: blur(2px);
     filter: blur(2px);
+    -webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
 }
 
 .popup-info {
