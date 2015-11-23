@@ -149,7 +149,7 @@
 			var htm =document.getElementById("wholeScreen");
 			
 				htm.className="blur-filter";
-			
+			alert("I'm here");
 			
 		};
 		
