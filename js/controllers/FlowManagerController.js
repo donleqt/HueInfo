@@ -73,6 +73,7 @@
                 description:'Festival Huế 2016 có chủ đề “710 năm Thuận Hóa - Phú Xuân - Thừa Thiên Huế; di sản văn hóa với hội nhập và phát triển” sẽ diễn ra từ ngày 29.4 đến ngày 4.5.2016.',
                 name:'Festival'
             }
+			
         ];
 
 
@@ -145,25 +146,14 @@
             target.push(getImage(target));
         }
 		
+		$scope.popupdone=false;
 		$scope.bluredpopup = function () {
-			var htm =document.getElementById("wholeScreen");
-			
-				htm.className="blur-filter";
-			alert("I'm here");
+			$scope.popupdone=true;
 			
 		};
 		
 		$scope.unBlur= function () {
-			var wholeScreen=document.getElementById("wholeScreen");
-			if (wholeScreen == null)
-			{
-				return;
-				
-			}
-			else 
-			{
-				wholeScreen.className=" ";
-			}
+			$scope.popupdone=false;
 		};
         $scope.slides7 = [];
         $scope.carouselIndex7 = 0;
