@@ -147,15 +147,9 @@
 		
 		$scope.bluredpopup = function () {
 			var htm =document.getElementById("wholeScreen");
-			if (htm.className=="blur-filter")
-			{
-				
-			}
-			else
-			{
+			
 				htm.className="blur-filter";
-				
-			}
+			
 			
 		};
 		
@@ -166,7 +160,7 @@
 				return;
 				
 			}
-			else if (wholeScreen.className=="blur-filter")
+			else 
 			{
 				wholeScreen.className=" ";
 			}
